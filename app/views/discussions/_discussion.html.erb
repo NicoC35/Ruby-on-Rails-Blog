@@ -1,6 +1,6 @@
 <div>
   <strong>Discusser:</strong>
-  <%= discussion.disucsser %>
+  <%= discussion.discusser %>
 </div>
 
 <div>
@@ -8,4 +8,8 @@
   <%= discussion.topic %>
 </div>
 
+<div>
+  <%= link_to 'Delete Discussion', [discussion.comment, discussion],
+  method: :delete, data: {confirm: 'Are you sure?'} %>
+</div>
 
