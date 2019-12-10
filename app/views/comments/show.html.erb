@@ -8,5 +8,34 @@
   <%= @comment.name %>
 </p>
 
+<h2>Discussions</h2>
+<% @comment.discussions.each do |discussion| %>
+  <p>
+    <strong>Discusser:</strong>
+    <%= discussion.discusser %>
+  </p>
+
+  <p>
+    <strong>Discussion:</strong>
+    <%= discussion.topic %>
+  </p>
+<% end %>
+
+
+<h2>Add a dicussion:</h2>
+<%= form_with(model: [ @comment, @comment.discussions.build ], local: true) do |form| %>
+  <div>
+    <%= form.label :topic %><br>
+    <%= form.text_area :topic %>
+  </div>
+  <div>
+    <%= form.label :discusser %><br>
+    <%= form.text_field :discusser %>
+  </div>
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
 <%= link_to 'Edit', edit_comment_path(@comment) %> |
 <%= link_to 'Back', comments_path %>
