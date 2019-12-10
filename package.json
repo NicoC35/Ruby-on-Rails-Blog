@@ -1,5 +1,5 @@
 {
-  "name": "Portfolio",
+  "name": "Nicos_Blog_Homework",
   "private": true,
   "dependencies": {
     "@rails/actioncable": "^6.0.0",
